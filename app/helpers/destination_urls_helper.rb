@@ -1,0 +1,2 @@
+module DestinationUrlsHelper
+end

@@ -1,0 +1,24 @@
+<br>
+<h3><b>Tracked Urls<b/></h3>
+<p>Click on the links to visit them.</p>
+
+<%= render partial: '/shared/flash.html.erb' %>
+
+<% classes = ['active', 'success', 'info', 'warning', 'danger'] %>
+<table class="table">
+  <thead>
+      <tr>
+          <th>Link</th>
+          <th>Visit Button</th>
+      </tr>
+  </thead>
+    <% @tracked_urls.each_with_index do |tracked_url, i| %>
+      <tbody>
+          <tr class="<%= classes[i] %>">
+              <td><%= tracked_url.name %></td>
+              <td><%= link_to('Visit Me', visit_tracked_url_path(tracked_url), class: 'btn btn-sm btn-visit', data: {destination: tracked_url.destination_url.name} ) %></td>
+          </tr>
+      </tbody>
+    <% end %>
+</table>
+<%= paginate @tracked_urls %>
