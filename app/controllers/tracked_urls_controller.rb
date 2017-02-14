@@ -1,6 +1,6 @@
 class TrackedUrlsController < ApplicationController
   def index
-    @tracked_urls = TrackedUrl.where(status: true).order(:name).page(params[:page]).per(2)
+    @tracked_urls = TrackedUrl.where(status: true).order(:name).page(params[:page]).per(5)
   end
 
   def visit

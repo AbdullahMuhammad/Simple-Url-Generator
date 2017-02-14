@@ -3,7 +3,11 @@
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function(){
-    $(".btn-visit").click(function(){
+    $('.btn-visit').click(function(e){
+        e.preventDefault();
         window.open($(this).data('destination'), '_blank');
+        $.get( $(this).attr('href'), function( data ) {
+        });
+        return;
     });
 });
